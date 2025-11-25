@@ -25,4 +25,4 @@ Dies ist der Source Code meiner persönlichen Portfolio-Website. Das Ziel war es
 * Studium: Medieninformatik (B.Sc.)
 
 ---
-*© 2025 Jannik.*
+*© 2025 Jannik*
