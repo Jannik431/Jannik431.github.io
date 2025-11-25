@@ -1,0 +1,106 @@
+/* --- CSS VARIABLES (Theming) --- */
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #1f2937;
+    --accent-color: #2563eb; /* Ein schönes Tech-Blau */
+    --card-bg: #ffffff;
+    --code-font: 'JetBrains Mono', monospace;
+    --body-font: 'Inter', sans-serif;
+}
+
+/* Optional: Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #0f172a;
+        --text-color: #e2e8f0;
+        --accent-color: #38bdf8;
+        --card-bg: #1e293b;
+    }
+}
+
+/* --- GLOBAL STYLES --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+        
+body {
+    font-family: var(--body-font);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+a { text-decoration: none; color: inherit; }
+        
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* --- HEADER --- */
+header { margin-bottom: 4rem; margin-top: 2rem; }
+h1 { font-size: 2.5rem; font-weight: 700; letter-spacing: -1px; }
+.subtitle { 
+    color: var(--accent-color); 
+    font-family: var(--code-font); 
+    font-size: 1.1rem;
+}
+
+/* --- PROJECTS GRID --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* --- PROJECT CARD --- */
+.card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Kleiner Hover-Effekt zeigt Liebe zum Detail */
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent-color);
+}
+
+.card h3 { margin-bottom: 0.5rem; }
+        
+.tech-stack {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.tech-tag {
+    font-size: 0.75rem;
+    font-family: var(--code-font);
+    background-color: rgba(37, 99, 235, 0.1); /* Transparentes Blau */
+    color: var(--accent-color);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+.links {
+    margin-top: 1rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+        
+.links a:hover { text-decoration: underline; }
+
+/* --- FOOTER --- */
+footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
