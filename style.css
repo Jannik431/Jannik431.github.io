@@ -123,24 +123,39 @@ footer {
 }
 
 /* --- TIMELINE STYLES --- */
-.timeline-item {
+.timeline{
     border-left: 2px solid var(--accent-color);
-    padding-left: 1.5rem;
-    margin-bottom: 2rem;
+    margin-left: 0.5rem;
+    padding-left: 2rem; 
+    position: relative;
+}
+.timeline-item {
+    margin-bottom: 3rem;
     position: relative;
 }
 
-/* Der kleine Punkt auf der Linie */
+/* Der letzte Punkt braucht unten keinen Abstand mehr */
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Der Punkt auf der Linie */
 .timeline-item::before {
     content: '';
-    width: 12px;
-    height: 12px;
-    background-color: var(--bg-color);
-    border: 2px solid var(--accent-color);
+    width: 14px;
+    height: 14px;
+    background-color: var(--bg-color); /* Farbe der Seite (macht den Punkt innen "leer") */
+    border: 3px solid var(--accent-color); /* Dickerer Rand für den Punkt */
     border-radius: 50%;
     position: absolute;
-    left: -7px;
-    top: 5px;
+            
+    /* Positionierung genau auf der Linie */
+    left: -2.6rem;
+    top: 0.2rem;    /* Etwas nach unten, damit er mittig zur Überschrift steht */
+            
+    /* Damit die Linie nicht durch den Punkt "durchscheint" */
+    z-index: 1; 
+    box-shadow: 0 0 0 5px var(--bg-color); /* Kleiner weißer Hof um den Punkt */
 }
 
 .timeline-date {
@@ -149,4 +164,5 @@ footer {
     color: var(--accent-color);
     margin-bottom: 0.25rem;
     display: block;
+    font-weight: bold;
 }
